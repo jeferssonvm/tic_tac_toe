@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Numeral.css"
-export const Numeral = ({cells, setCells,player}) => {
+export const Numeral = ({cells, setCells,player, gameResult}) => {
   const changeXO =(value)=>{
     setCells(cells.map(cell => (cell.id === value? {id:cell.id, value:player}: {id:cell.id, value:cell.value})))
   }
@@ -11,7 +11,7 @@ export const Numeral = ({cells, setCells,player}) => {
       <div className='Numeral'>
         {
           cells.map(cell => {
-            return <button className='cell' onClick={()=>changeXO(cell.id)} disabled ={cell.value !== null} key={cell.id}>
+            return <button className='cell' onClick={()=>changeXO(cell.id)} disabled ={(cell.value !== null) || gameResult} key={cell.id}>
                     {cell.value} 
               </button>
           })
