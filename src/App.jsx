@@ -37,8 +37,8 @@ function App() {
     }
   },[reset])
   const selectPlayer = ()=>{
-    let prueba = Math.floor(Math.random()*2)+1
-    if(prueba == 2){
+    let random = Math.floor(Math.random()*2)+1
+    if(random == 2){
       return "X"
     }else{
       return "O"
